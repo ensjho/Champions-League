@@ -1,49 +1,72 @@
-/** Team names */
-const teams = require('../fakeDb');
+const teamNames = require('../fakeDb');
+const ExpressError = require('../helpers/ExpressError');
+
+/** Related functions for team. */
 
 class Team {
-  /** Grabbing All teamNames. */
+  /** Find all teamNames(strings). */
   static findAll() {
-    return teams;
+    return teamNames;
   }
 
-  /** Add teamName. */
-  static async addTeam(stringName) {
-    teams.unshift(stringName);
-    return stringName;
-  }
-
-  /** Find matching name. */
-
-  static async find(name) {
-    const foundTeam = teams.find(v => v.name === name);
-    if (foundTeam === undefined) {
-      return { message: 'Not Found', status: 404 };
+  /** Add a new teamName(string) to database.
+   *  Prepend a new string to the beginning of the database.
+   */
+  static addTeam(name) {
+    const checkDuplicateTeam = teamNames.indexOf(name);
+    if (checkDuplicateTeam !== -1) {
+      throw new ExpressError(
+        'Existing Team Name, please choose other team name!',
+        400,
+      );
     }
-    return foundTeam;
+    teamNames.unshift(name);
+    return name;
   }
 
-  /** Update teamName. */
-  static async update(name, data) {
-    const foundTeamItem = Team.find(name);
-    if (foundTeamItem === undefined) {
-      return { message: 'Not Found', status: 404 };
+  /** Given a teamName, return the index position of matching team Name.
+   *  Throw error if `name` does not exist in the database;
+   */
+  static findTeamName(name) {
+    const foundTeam = teamNames.indexOf(name);
+    if (foundTeam === -1) {
+      throw new ExpressError('Not Found', 404);
     }
-    foundTeamItem.name = data.name;
-
-    return foundTeamItem;
+    return teamNames[foundTeam];
   }
 
-  /** Remove item with matching id. */
-  static async remove(stringName) {
-    console.log(teams);
-    const foundIdx = teams.findIndex(teamname => teamname === stringName);
-    console.log(foundIdx);
+  /** Update existing teamName with `data`.
+   *  Throw error if `name` is not found in the database;
+   */
+  static updateTeamName(name, data) {
+    const foundIdx = teamNames.findIndex(teamname => teamname === name);
     if (foundIdx === -1) {
-      return { message: 'Not Found', status: 404 };
+      throw new ExpressError('Not Found', 404);
     }
-    teams.splice(foundIdx, 1);
-    return { message: 'deleted', status: 200 };
+    /** Checking for duplicates */
+    const checkDuplicateTeam = teamNames.indexOf(data);
+    if (checkDuplicateTeam !== -1) {
+      throw new ExpressError(
+        'Existing Team Name, please choose other team name!',
+        400,
+      );
+    }
+
+    teamNames[foundIdx] = data.name;
+
+    return teamNames[foundIdx];
+  }
+
+  /** Remove teamName in database that matches stringName.
+   *  Throw error if `name` is not found in the database;
+   */
+  static removeTeamName(name) {
+    const foundIdx = teamNames.findIndex(teamname => teamname === name);
+    if (foundIdx === -1) {
+      throw new ExpressError('Not Found', 404);
+    }
+    teamNames.splice(foundIdx, 1);
+    return { message: 'Deleted', status: 200 };
   }
 }
 
