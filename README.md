@@ -1,4 +1,4 @@
-# DMI - Tech Screen - Champions League App
+# DMI - Tech Screen - Champions League App - Eric Jho
 
 Champions League App is a full stack application made with react boiler plate.
 
