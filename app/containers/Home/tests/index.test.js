@@ -41,7 +41,7 @@ describe('<Home />', () => {
           teamNames={['Arsenal']}
           loading={false}
           error={false}
-          dispatchloadTeamNames={jest.fn()}
+          dispatchloadTeamNames={mockFetchingTeamNames}
         />
       </Provider>,
     );

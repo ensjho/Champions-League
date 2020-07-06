@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { IntlProvider } from 'react-intl';
 import { render } from 'react-testing-library';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
@@ -23,14 +24,16 @@ describe('<AddTeam />', () => {
       container: { firstChild },
     } = render(
       <Provider store={store}>
-        <AddTeam
-          teamname=""
-          loading={false}
-          error={false}
-          onsubmitTeamname={jest.fn()}
-          onchangeTeamname={jest.fn()}
-          dispatchResetMessages={jest.fn()}
-        />
+        <IntlProvider locale="en">
+          <AddTeam
+            teamname=""
+            loading={false}
+            error={false}
+            onsubmitTeamname={jest.fn()}
+            onchangeTeamname={jest.fn()}
+            dispatchResetMessages={jest.fn()}
+          />
+        </IntlProvider>
       </Provider>,
     );
     expect(firstChild).toMatchSnapshot();
@@ -40,11 +43,14 @@ describe('<AddTeam />', () => {
     const submitSpy = jest.fn();
     render(
       <Provider store={store}>
-        <AddTeam
-          teamname=""
-          onchangeTeamname={() => {}}
-          onsubmitTeamname={submitSpy}
-        />
+        <IntlProvider locale="en">
+          <AddTeam
+            teamname=""
+            loading={{ message: 'fetching failed' }}
+            onchangeTeamname={() => {}}
+            onsubmitTeamname={submitSpy}
+          />
+        </IntlProvider>
       </Provider>,
     );
     expect(submitSpy).not.toHaveBeenCalled();
@@ -62,7 +68,7 @@ describe('<AddTeam />', () => {
         const dispatch = jest.fn();
         const result = mapDispatchToProps(dispatch);
         const teamname = 'Dortmund';
-        result.onChangeUsername({ target: { value: teamname } });
+        result.onchangeTeamname({ target: { value: teamname } });
         expect(dispatch).toHaveBeenCalledWith(changeTeamname(teamname));
       });
     });
@@ -77,7 +83,7 @@ describe('<AddTeam />', () => {
       it('should dispatch addTeamname when called', () => {
         const dispatch = jest.fn();
         const result = mapDispatchToProps(dispatch);
-        result.onSubmitForm();
+        result.onsubmitTeamname();
         expect(dispatch).toHaveBeenCalledWith(addTeamname());
       });
 
@@ -85,7 +91,7 @@ describe('<AddTeam />', () => {
         const preventDefault = jest.fn();
         const result = mapDispatchToProps(() => {});
         const evt = { preventDefault };
-        result.onSubmitForm(evt);
+        result.onsubmitTeamname(evt);
         expect(preventDefault).toHaveBeenCalledWith();
       });
     });

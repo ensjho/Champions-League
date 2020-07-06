@@ -1,66 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HomePage /> should render and match the snapshot 1`] = `
+exports[`<AddTeam /> should render and match the snapshot 1`] = `
 <article>
   <div>
     <section
-      class="Section-sc-1eulrsm-0 CenteredSection-sc-6zy0wx-0 imGCbL"
+      class="Section-ket8oq-0 CenteredSection-lpvr5o-0 epDwMw"
     >
       <h2
         class="H2-egphza-0 HsCXl"
       >
         <span>
-          Start your next react project in seconds
+          Do you have what it takes to win the Champions League?
         </span>
       </h2>
       <p>
         <span>
-          A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices
+          Your team name has to be between 1 and 20 characters (number & symbols allowed)
+        </span>
+      </p>
+      <p>
+        <span>
+          Keep in mind that no dulpicate names are allowed!
         </span>
       </p>
     </section>
     <section
-      class="Section-sc-1eulrsm-0 eTEsZl"
+      class="Section-ket8oq-0 joDnBK"
     >
       <h2
         class="H2-egphza-0 HsCXl"
       >
         <span>
-          Try me!
+          Add Your Team!
         </span>
       </h2>
       <form
-        class="Form-dmhz4x-0 ZClLh"
+        class="Form-sc-131jk1n-0 dvEhEW"
       >
         <label
-          for="username"
+          for="teamname"
         >
-          <span>
-            Show Github repositories by
-          </span>
-          <span
-            class="AtPrefix-sc-1suuq8o-0 fvrDQr"
-          >
-            <span>
-              @
-            </span>
-          </span>
           <input
-            class="Input-sc-19rkjmi-0 gyJaEd"
-            id="username"
-            placeholder="mxstbr"
+            class="Input-sc-1u4rld3-0 hjznZH"
+            id="teamname"
+            placeholder="Insert your team name"
             type="text"
             value=""
           />
         </label>
+        <button
+          class="Button-sc-700fna-0 jLQkUW"
+        >
+          Add Team
+        </button>
       </form>
-      <div
-        class="Wrapper-sc-1umgotm-0 laCwDT"
+      <section
+        class="ErrorArea__Section-j2gckk-0 cpOjvw"
       >
-        <ul
-          class="Ul-mwnq6h-0 jcxXFy"
-        />
-      </div>
+        <section
+          class="Success__Warning-sc-1hdr56j-0 llmbwq"
+        >
+           
+          
+           
+        </section>
+        <section
+          class="Warning-sc-1grgbrk-0 hwgZwO"
+        >
+           
+          
+           
+        </section>
+      </section>
     </section>
   </div>
 </article>

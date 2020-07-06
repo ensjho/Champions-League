@@ -1,67 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HomePage /> should render and match the snapshot 1`] = `
-<article>
-  <div>
-    <section
-      class="Section-sc-1eulrsm-0 CenteredSection-sc-6zy0wx-0 imGCbL"
+exports[`<Home /> should render and match the snapshot 1`] = `
+<section
+  class="Section-eaizcf-0 lnleCN"
+>
+  <h1
+    class="H1-tncdg6-0 jcnLlZ"
+  >
+    Champions League Participants
+  </h1>
+  <div
+    class="Wrapper-sc-1umgotm-0 laCwDT"
+  >
+    <ul
+      class="Ul-mwnq6h-0 jcxXFy"
     >
-      <h2
-        class="H2-egphza-0 HsCXl"
+      <li
+        class="Wrapper-euo0oy-0 jLvxtc"
       >
-        <span>
-          Start your next react project in seconds
-        </span>
-      </h2>
-      <p>
-        <span>
-          A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices
-        </span>
-      </p>
-    </section>
-    <section
-      class="Section-sc-1eulrsm-0 eTEsZl"
-    >
-      <h2
-        class="H2-egphza-0 HsCXl"
-      >
-        <span>
-          Try me!
-        </span>
-      </h2>
-      <form
-        class="Form-dmhz4x-0 ZClLh"
-      >
-        <label
-          for="username"
+        <div
+          class="Item-sc-3y9mie-0 fKXSkT"
         >
-          <span>
-            Show Github repositories by
-          </span>
-          <span
-            class="AtPrefix-sc-1suuq8o-0 fvrDQr"
-          >
-            <span>
-              @
-            </span>
-          </span>
-          <input
-            class="Input-sc-19rkjmi-0 gyJaEd"
-            id="username"
-            placeholder="mxstbr"
-            type="text"
-            value=""
-          />
-        </label>
-      </form>
-      <div
-        class="Wrapper-sc-1umgotm-0 laCwDT"
-      >
-        <ul
-          class="Ul-mwnq6h-0 jcxXFy"
-        />
-      </div>
-    </section>
+          Arsenal
+        </div>
+      </li>
+    </ul>
   </div>
-</article>
+</section>
 `;

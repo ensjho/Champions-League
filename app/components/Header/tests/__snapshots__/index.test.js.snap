@@ -2,16 +2,11 @@
 
 exports[`<Header /> should render a div 1`] = `
 <div>
-  <a
-    class="A-br8h0y-0 A-p44m4v-0 cYguYL"
-    href="https://www.reactboilerplate.com/"
-  >
-    <img
-      alt="react-boilerplate - Logo"
-      class="Img-sc-9pa8on-0 eepIiv"
-      src="IMAGE_MOCK"
-    />
-  </a>
+  <img
+    alt="react-boilerplate - championsleague"
+    class="Img-sc-9pa8on-0 eepIiv"
+    src="https://d107a8nc3g2c4h.cloudfront.net/blog/wp-content/uploads/2018/02/UEFA_Champions_League_banner.jpg"
+  />
   <div
     class="NavBar-sc-3b48xb-0 ioQxlc"
   >
@@ -25,10 +20,10 @@ exports[`<Header /> should render a div 1`] = `
     </a>
     <a
       class="HeaderLink-sc-1mtyaiv-0 hMiTYG"
-      href="/features"
+      href="/register"
     >
       <span>
-        Features
+        Add Your Team
       </span>
     </a>
   </div>
