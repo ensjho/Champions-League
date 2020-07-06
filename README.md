@@ -16,7 +16,7 @@ Champions League App is a full stack application made with react boiler plate.
 - Have one endpoint to fetch all strings.
 - Have one endpoint to prepend a new string to the array.
 
-- In additioon (Patch/ Delete routes included)
+- In addition (Patch/ Delete routes included)
 
 ## Features
 - Have one page to display all strings stored on server.
