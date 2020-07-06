@@ -12,8 +12,8 @@ export default defineMessages({
     id: `${scope}.home`,
     defaultMessage: 'Home',
   },
-  features: {
-    id: `${scope}.features`,
-    defaultMessage: 'Features',
+  newTeam: {
+    id: `${scope}.newTeam`,
+    defaultMessage: 'Add Your Team',
   },
 });

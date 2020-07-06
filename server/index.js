@@ -14,33 +14,12 @@ const ngrok =
 const { resolve } = require('path');
 const app = express();
 const apiRoutes = require('./routes/api');
-const ExpressError = require('./helpers/ExpressError');
 
 /** Recognize the incoming Request Object as a JSON object */
 app.use(express.json());
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 app.use('/api', apiRoutes);
-
-/** 404 handler */
-
-app.use(function notFoundHandler(req, res, next) {
-  const err = new ExpressError('Not Found', 404);
-  // pass the error to the next piece of middleware
-  return next(err);
-});
-
-/** general error handler */
-
-// eslint-disable-next-line no-unused-vars
-app.use(function generalErrorHandler(err, req, res, next) {
-  res.status(err.status || 500);
-  console.error(err.stack);
-  return res.json({
-    status: err.status,
-    message: err.message,
-  });
-});
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {

@@ -1,9 +1,5 @@
-/** ExpressError extends the normal JS error so we can easily
- *  add a status when we make an instance of it.
- *
- *  Since we are using JSONSchema and will return an array of
- *  errors we want to make sure we display that properly
- *  The error-handling middleware will return this.
+/** Helper class which extends from the Normal JS error where
+ *  one can add a status.
  */
 
 class ExpressError extends Error {
@@ -11,7 +7,6 @@ class ExpressError extends Error {
     super();
     this.message = message;
     this.status = status;
-    console.error(this.stack);
   }
 }
 

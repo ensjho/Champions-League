@@ -10,9 +10,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
-
-import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
+import Home from 'containers/Home/Loadable';
+import AddTeam from 'containers/AddTeam/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -32,15 +31,18 @@ export default function App() {
   return (
     <AppWrapper>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="Add Football Team Name"
+        defaultTitle="Football Team Name"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta
+          name="description"
+          content="React.js Boilerplate Football TeamName application"
+        />
       </Helmet>
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
+        <Route exact path="/" component={Home} />
+        <Route path="/register" component={AddTeam} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
