@@ -1,4 +1,29 @@
-<img src="https://raw.githubusercontent.com/react-boilerplate/react-boilerplate-brand/master/assets/banner-metal-optimized.jpg" alt="react boilerplate banner" align="center" />
+# DMI - Tech Screen - Champions League App
+
+Champions League App is a full stack application made with react boiler plate.
+
+## Technologies 
+- React Router
+- Redux
+- Redux Saga
+- Reselect
+- Styled Components 
+- Unit Tests
+
+## Server
+- Node / Express server.     
+- Contain an array of strings.
+- Have one endpoint to fetch all strings.
+- Have one endpoint to prepend a new string to the array.
+
+- In additioon (Patch/ Delete routes included)
+
+## Features
+- Have one page to display all strings stored on server.
+- Have one page with UI to input a string and send to server.
+- Allow a user to navigate between the two pages.
+- Not be fully styled, but should be laid out in a meaningful way.
+
 
 <br />
 
